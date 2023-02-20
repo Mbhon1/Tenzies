@@ -100,14 +100,16 @@ function App() {
   return (
     <main>
       {tenzies === true ? <ReactConfetti /> : ""}
-      <h1>Tenzies</h1>
-      <p>
-        Roll until all dice are the same. Click each die to freeze it at its
-        current value for each roll.{" "}
-      </p>
+      <div className="text-container">
+        <h1 className="title-game">Tenzies</h1>
+        <p className="desc">
+          Roll until all dice are the same. Click each die to freeze it at its
+          current value for each roll.{" "}
+        </p>
+      </div>
       <div className="dice-container">{dieElements}</div>
 
-      <div>
+      <div className="last-roll">
         <h2>Last Game Rolls</h2>
         <p>{prevCounter}</p>
       </div>
@@ -119,14 +121,14 @@ function App() {
           handleCount();
         }}
       >
-        {tenzies === true ? "New game" : "Roll"}{" "}
+        {tenzies === true ? "New Game" : "Roll"}{" "}
       </button>
 
-      <div>
+      <div className="num-rolls">
         <h2>Number of Rolls</h2>
         <p>{counter}</p>
       </div>
-      <div>
+      <div className="time">
         <p>Time: {time.time}</p>
         <p>Last Time: {time.lastTime}</p>
       </div>

@@ -81,7 +81,7 @@ function App() {
           die.isHeld ? die : { ...die, value: Math.ceil(Math.random() * 6) }
         )
       );
-      setTime((prev) => ({ ...prev, stop: false }));
+      setTime((prevState) => ({ ...prevState, stop: false }));
     }
   }
 
@@ -100,6 +100,7 @@ function App() {
   return (
     <main>
       {tenzies === true ? <ReactConfetti /> : ""}
+      {tenzies === true && <p className="winner gradient-text"> YOU WON!</p>}
       <div className="text-container">
         <h1 className="title-game">Tenzies</h1>
         <p className="desc">
@@ -130,7 +131,7 @@ function App() {
       </div>
       <div className="time">
         <p>Time: {time.time}</p>
-        <p>Last Time: {time.lastTime}</p>
+        <p>Last Game Time: {time.lastTime}</p>
       </div>
     </main>
   );

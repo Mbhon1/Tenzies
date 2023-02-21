@@ -83,3 +83,9 @@ p {
 .title-game {
   padding-top: 180px;
 }
+
+img {
+  display: block;
+  width: 100%;
+  background-size: cover;
+}
